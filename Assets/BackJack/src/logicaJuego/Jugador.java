@@ -21,6 +21,7 @@ public class Jugador {
   }
   public void aniadirMano(Carta carta) {
     mano.add(carta);
+    calcularTotal();
   }
   
   /**
@@ -33,9 +34,9 @@ public class Jugador {
    * */
   public void calcularTotal(){
     totalEnMano = 0;
-    TipoValor tempVerificador = null;
+    TipoValor tempVerificador = TipoValor.AS;
     for (int i = 0; i < mano.size(); i++){
-      if(mano.get(i).getValor() == tempVerificador.AS){
+      if(mano.get(i).getValor() == tempVerificador){
         if(verificaAs(mano.get(i).getValor().getValorPrim())) {
           totalEnMano += mano.get(i).getValor().getValorSec();
         }else {
@@ -59,5 +60,14 @@ public class Jugador {
     }else {
       return false;
     }
+  }
+  public String getNombre() {
+    return nombre;
+  }
+  public Estado getEstado() {
+    return estado;
+  }
+  public int getTotalEnMano() {
+    return totalEnMano;
   }
 }

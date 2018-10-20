@@ -7,7 +7,7 @@ public enum TipoValor{
   private int valorNumSec;
   
   TipoValor(int valorNum1, int valorNum2){
-    this.valorNum= valorNum;
+    this.valorNum= valorNum1;
     this.valorNumSec= valorNum2;
   }
   public int getValorPrim() {
