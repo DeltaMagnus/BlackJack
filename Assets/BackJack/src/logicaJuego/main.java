@@ -3,23 +3,29 @@ package logicaJuego;
 public class main {
 
   public static void main(String[] args) {
-    Jugador player1 = new Jugador("James");
+    Player player1 = new Player("James");
     
-    Baraja deck = new Baraja();
-    deck.barajar();
+    Deck deck = new Deck();
+    deck.shuffleDeck();
     
-    System.out.println("Indice de cartas al crearse : "+deck.indiceDisponible());
-    Carta carta = deck.tomarCarta();
-    Carta carta1 = deck.tomarCarta();
-    Carta carta2 = deck.tomarCarta();
-    System.out.println("Indice de cartas al crear mano : "+deck.indiceDisponible());
-    player1.aniadirMano(carta);
-    player1.aniadirMano(carta1);
-    player1.aniadirMano(carta2);
-    System.out.println(player1.manoToString());
-    System.out.println("El total es: " + player1.getTotalEnMano());
-    player1.manoReseteo(deck);
-    System.out.println("Indice de cartas al Retornalas : "+deck.indiceDisponible());
+    System.out.println("Indice de cartas al crearse : "+deck.availableIndex());
+    Card card = deck.drawCard();
+    Card carta1 = deck.drawCard();
+    Card carta2 = deck.drawCard();
+    //System.out.println(card.toString()+"\n");
+    //System.out.println(card.getStringName()+"\n");
+    //System.out.println(carta1.toString()+"\n");
+    //System.out.println(carta1.getStringName()+"\n");
+    //System.out.println(carta2.toString()+"\n");
+    //System.out.println(carta2.getStringName());
+    System.out.println("Indice de cartas al crear mano : "+deck.availableIndex());
+    player1.addCard(card);
+    player1.addCard(carta1);
+    player1.addCard(carta2);
+    System.out.println(player1.handToString());
+    System.out.println("El total es: " + player1.getScore());
+    player1.resetHand(deck);
+    System.out.println("Indice de cartas al Retornalas : "+deck.availableIndex());
   }
  
 }
