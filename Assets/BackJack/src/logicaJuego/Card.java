@@ -5,12 +5,12 @@ package logicaJuego;
  *@author James Nun
  *@version 1.0
  */
-public class Card {
+public class Card implements java.io.Serializable{
   private TypeCard type;
   private TypeValue value;
   
   
-  public Card(TypeCard type, TypeValue value) {
+  public Card(TypeCard type, TypeValue value)  {
     this.type = type;
     this.value = value;  
   }

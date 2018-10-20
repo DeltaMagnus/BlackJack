@@ -8,7 +8,7 @@ import logicaJuego.Card;
  *@author James Nun
  *@version 1.0
  */
-public class Player {
+public class Player implements java.io.Serializable{
   private String username ;
   public ArrayList<Card>hand;
   private Status state;
