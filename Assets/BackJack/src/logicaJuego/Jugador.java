@@ -23,6 +23,12 @@ public class Jugador {
     mano.add(carta);
     calcularTotal();
   }
+  public void manoReseteo(Baraja maso) {
+    while(mano.size()!=0){
+      maso.retornarCartas(mano.get(0));
+      mano.remove(0);
+    }
+  }
   
   /**
    * Metodo para contar el valor total de las cartas en mano
@@ -69,5 +75,12 @@ public class Jugador {
   }
   public int getTotalEnMano() {
     return totalEnMano;
+  }
+  public String manoToString() {
+    String mensj = "";
+    for (int i = 0; i < mano.size(); i++) {
+      mensj += mano.get(i).toString() +"\n";
+    }
+    return mensj;
   }
 }
