@@ -34,7 +34,7 @@ public class Baraja {
    * 
    * @return La carta que se tomo, la maso estar barajeado, se puede tomar una carta cualquiera del maso*/
   public Carta tomarCarta(){
-    Carta cartaAdquirida = cartas.get(0);
+    Carta cartaAdquirida = new Carta(cartas.get(0).getTipo(),cartas.get(0).getValor());
     cartas.remove(0);
     return cartaAdquirida;
   }

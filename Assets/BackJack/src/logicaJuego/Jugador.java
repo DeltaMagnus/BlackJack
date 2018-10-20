@@ -11,12 +11,13 @@ import logicaJuego.Carta;
  */
 public class Jugador {
   private String nombre;
-  private ArrayList<Carta>mano;
+  public ArrayList<Carta>mano;
   private Estado estado;
   private int totalEnMano;
   
   public Jugador(String nombre) {
     this.nombre = nombre;
+    mano = new ArrayList<Carta>();
   }
   public void aniadirMano(Carta carta) {
     mano.add(carta);
